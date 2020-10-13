@@ -24,7 +24,7 @@ public class SwaggerConfig {
 
 
     @Bean
-    public Docket api(){
+    public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("br.com.jacson.api_exchange.controller"))
@@ -38,9 +38,9 @@ public class SwaggerConfig {
     }
 
     private ApiInfo apiInfo() {
-        return new ApiInfo("Api Exchange","Cotação de moedas",
+        return new ApiInfo("Api Exchange", "Cotação de moedas",
                 "1.0",
-                "",new Contact("Jacson","https://www.linkedin.com/in/jacsoncanabarro/","jacsoncanabarro@gmail.com"),
+                "", new Contact("Jacson", "https://www.linkedin.com/in/jacsoncanabarro/", "jacsoncanabarro@gmail.com"),
                 "",
                 "", Collections.emptySet());
     }

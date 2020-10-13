@@ -19,17 +19,11 @@ public class ApiCotacao implements Serializable {
     private HashMap rates;
 
 
-
     @ApiModelProperty(hidden = true)
-    public String dataFormatada(){
+    public String dataFormatada() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         return sdf.format(date.getTime());
     }
-
-
-
-
-
 
 
 }

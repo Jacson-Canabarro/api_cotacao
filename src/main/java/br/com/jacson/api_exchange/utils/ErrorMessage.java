@@ -20,7 +20,7 @@ public class ErrorMessage implements Serializable {
     @ApiModelProperty(hidden = true)
     private Map<String, String> erros;
 
-    public ErrorMessage(){
+    public ErrorMessage() {
 
     }
 

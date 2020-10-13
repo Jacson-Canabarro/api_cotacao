@@ -10,9 +10,7 @@ import java.util.Map;
 public class ValidatorUtils {
 
 
-
     /**
-     *
      * Verifica o BindingResult enviado como parâmetro. Caso haja um erro de validação
      * uma ValidacaoException é lançada.
      *
@@ -21,7 +19,7 @@ public class ValidatorUtils {
      */
 
     public static void verifyBindingResult(BindingResult result) throws ValidacaoException {
-        if(result.hasErrors()){
+        if (result.hasErrors()) {
             Map<String, String> erros = new HashMap<>();
             result.getFieldErrors().forEach(f -> erros.put(f.getField(), f.getDefaultMessage()));
             result.getGlobalErrors().forEach(f -> erros.put(f.getObjectName(), f.getDefaultMessage()));

@@ -26,7 +26,7 @@ public class ExchangeService {
 
 
     public CotacaoDTO getCotacao(CotacaoDTO cotacaoDTO) throws ParseException {
-        String url = uriComponentsBuilder.path("/"+cotacaoDTO.converterData())
+        String url = uriComponentsBuilder.path("/" + cotacaoDTO.converterData())
                 .queryParam("base", cotacaoDTO.getMoedaBase())
                 .queryParam("symbols", cotacaoDTO.getMoedaFinal()).build().toString();
         RestTemplate restTemplate = new RestTemplate();
@@ -40,13 +40,13 @@ public class ExchangeService {
         return cotacaoDTO;
     }
 
-    public Page<Cotacao> getAllCotacoes(){
+    public Page<Cotacao> getAllCotacoes() {
         int page = 0;
         int size = 10;
         PageRequest pageRequest = PageRequest.of(
                 page,
                 size,
-                Sort.Direction.ASC,"dataConsulta");
-         return cotacaoRepository.findAll(pageRequest);
+                Sort.Direction.ASC, "dataConsulta");
+        return cotacaoRepository.findAll(pageRequest);
     }
 }

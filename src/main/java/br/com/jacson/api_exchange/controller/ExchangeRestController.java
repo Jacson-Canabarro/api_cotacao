@@ -41,7 +41,7 @@ public class ExchangeRestController {
     @ApiOperation(value = "Resulta nas singlas das moedas disponíveis.",
             response = List.class,
             notes = "Endpoint utilizado para consultar as singlas de moedas disponíveis para consultar a cotação.")
-    public List<String> getListaMoedas(){
+    public List<String> getListaMoedas() {
         return CotacaoDTOValidator.list;
     }
 
@@ -49,7 +49,7 @@ public class ExchangeRestController {
     @ApiOperation(value = "Resulta em um objeto paginável com todas as consultas realizadas na API.",
             response = List.class,
             notes = "Endpoint utilizado para consultar os registros feitos na API e salvos na base de dados.")
-    public Page<Cotacao> getAllCotacoes(){
+    public Page<Cotacao> getAllCotacoes() {
         return exchangeService.getAllCotacoes();
     }
 
@@ -63,6 +63,6 @@ public class ExchangeRestController {
             @ApiResponse(code = 400, message = "Preenchimento dos campos inválidos")})
     public Resultado<CotacaoDTO> getCotacao(@RequestBody @Valid CotacaoDTO dto, BindingResult result) throws ParseException {
         ValidatorUtils.verifyBindingResult(result);
-       return new Resultado<>(exchangeService.getCotacao(dto));
+        return new Resultado<>(exchangeService.getCotacao(dto));
     }
 }

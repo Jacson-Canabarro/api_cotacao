@@ -29,10 +29,10 @@ public class ApiExchangeApplication {
 
     @Bean
     @Scope(scopeName = "prototype")
-    public UriComponentsBuilder uriComponentsBuilder(){
+    public UriComponentsBuilder uriComponentsBuilder() {
         return UriComponentsBuilder.fromHttpUrl(apiBasePath);
     }
-    
+
 
     @PostConstruct
     public void setUp() {

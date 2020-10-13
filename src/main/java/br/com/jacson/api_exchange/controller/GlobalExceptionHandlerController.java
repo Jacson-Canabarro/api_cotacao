@@ -24,7 +24,7 @@ public class GlobalExceptionHandlerController {
      * @return Resposta com os erros de validação
      */
     @ExceptionHandler(ValidacaoException.class)
-    public ResponseEntity<Resultado> handleValidacaoException(ValidacaoException ex){
+    public ResponseEntity<Resultado> handleValidacaoException(ValidacaoException ex) {
         return ResponseEntity
                 .status(400)
                 .body(new Resultado(
@@ -40,7 +40,7 @@ public class GlobalExceptionHandlerController {
      * @return Resposta com o ID da entidade não encontrada.
      */
     @ExceptionHandler(NotFoundException.class)
-    public ResponseEntity<Resultado> handleNotFoundException(NotFoundException ex){
+    public ResponseEntity<Resultado> handleNotFoundException(NotFoundException ex) {
         return ResponseEntity
                 .status(404)
                 .body(new Resultado(
@@ -56,7 +56,7 @@ public class GlobalExceptionHandlerController {
      * @return Resultado com mensagem genérica de erro.
      */
     @ExceptionHandler(HttpMessageNotReadableException.class)
-    public ResponseEntity<Resultado> handleMessageNotReadableException(){
+    public ResponseEntity<Resultado> handleMessageNotReadableException() {
         return ResponseEntity
                 .status(400)
                 .body(new Resultado(
@@ -65,7 +65,7 @@ public class GlobalExceptionHandlerController {
     }
 
     @ExceptionHandler(UnsupportedOperationException.class)
-    public ResponseEntity<Resultado> handleUnsupporterOperationException(){
+    public ResponseEntity<Resultado> handleUnsupporterOperationException() {
         return ResponseEntity
                 .status(400)
                 .body(new Resultado(

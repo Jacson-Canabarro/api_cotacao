@@ -25,7 +25,7 @@ public class CotacaoDTO implements Serializable {
     private String moedaBase;
     @ApiModelProperty(position = 3, notes = "Moeda resultante para cotação.", required = true, example = "BRL")
     private String moedaFinal;
-    @ApiModelProperty(position = 4, notes = "Quantidade de moedas para ser calculada.",required = true,example = "25")
+    @ApiModelProperty(position = 4, notes = "Quantidade de moedas para ser calculada.", required = true, example = "25")
     private Integer quantidade;
     @ApiModelProperty(hidden = true)
     private String total_convertido;
@@ -34,13 +34,13 @@ public class CotacaoDTO implements Serializable {
 
 
     @ApiModelProperty(hidden = true)
-    public void calcularConversao(ApiCotacao apiCotacao){
-        if(!ObjectUtils.isEmpty(apiCotacao.getRates())){
+    public void calcularConversao(ApiCotacao apiCotacao) {
+        if (!ObjectUtils.isEmpty(apiCotacao.getRates())) {
             Double valor = (Double) apiCotacao.getRates().get(moedaFinal);
             DecimalFormat df = new DecimalFormat("#0.00");
-            cotacao_dia = moedaFinal +": " + df.format(valor);
+            cotacao_dia = moedaFinal + ": " + df.format(valor);
             double resultado = valor * quantidade;
-            total_convertido = moedaFinal +": " +df.format(resultado) ;
+            total_convertido = moedaFinal + ": " + df.format(resultado);
         }
     }
 
@@ -50,7 +50,6 @@ public class CotacaoDTO implements Serializable {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         return format.format(date);
     }
-
 
 
 }

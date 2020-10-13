@@ -1,8 +1,6 @@
 package br.com.jacson.api_exchange.exception;
 
 
-import io.swagger.annotations.ApiOperation;
-
 import javax.validation.ValidationException;
 import java.util.Map;
 
@@ -14,6 +12,7 @@ public class ValidacaoException extends ValidationException {
         super("Erros de validação encontrados");
         this.erros = erros;
     }
+
     public ValidacaoException(String message, Map<String, String> erros) {
         super(message);
         this.erros = erros;

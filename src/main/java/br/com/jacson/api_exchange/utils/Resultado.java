@@ -6,6 +6,7 @@ import lombok.Setter;
 
 /**
  * <p>Classe que representa o resultado de uma operação, principalmente de salvar ou editar entidades.</p>
+ *
  * @param <T> Tipo do objeto resultado.
  */
 @Getter
@@ -17,8 +18,9 @@ public class Resultado<T> {
     @ApiModelProperty(hidden = true)
     private ErrorMessage errorMessage;
 
-    public Resultado(){
+    public Resultado() {
     }
+
     public Resultado(T objetoResultado) {
         this.objetoResultado = objetoResultado;
     }
