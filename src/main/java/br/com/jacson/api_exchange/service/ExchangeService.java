@@ -26,7 +26,7 @@ public class ExchangeService {
 
 
     public CotacaoDTO getCotacao(CotacaoDTO cotacaoDTO) throws ParseException {
-        String url = uriComponentsBuilder.path("/" + cotacaoDTO.converterData())
+        String url = uriComponentsBuilder.path("/" +cotacaoDTO.converterData())
                 .queryParam("base", cotacaoDTO.getMoedaBase())
                 .queryParam("symbols", cotacaoDTO.getMoedaFinal()).build().toString();
         RestTemplate restTemplate = new RestTemplate();
