@@ -14,6 +14,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.text.ParseException;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -40,13 +41,9 @@ public class ExchangeService {
         return cotacaoDTO;
     }
 
-    public Page<Cotacao> getAllCotacoes() {
-        int page = 0;
-        int size = 10;
-        PageRequest pageRequest = PageRequest.of(
-                page,
-                size,
-                Sort.Direction.ASC, "dataConsulta");
-        return cotacaoRepository.findAll(pageRequest);
+    public List<Cotacao> getAllCotacoes() {
+     return cotacaoRepository.findAll();
+
+
     }
 }

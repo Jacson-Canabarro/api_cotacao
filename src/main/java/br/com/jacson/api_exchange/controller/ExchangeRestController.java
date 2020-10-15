@@ -46,10 +46,10 @@ public class ExchangeRestController {
     }
 
     @GetMapping
-    @ApiOperation(value = "Resulta em um objeto paginável com todas as consultas realizadas na API.",
+    @ApiOperation(value = "Resulta em em uma lista com todas as consultas realizadas na API.",
             response = List.class,
             notes = "Endpoint utilizado para consultar os registros feitos na API e salvos na base de dados.")
-    public Page<Cotacao> getAllCotacoes() {
+    public List<Cotacao> getAllCotacoes() {
         return exchangeService.getAllCotacoes();
     }
 
