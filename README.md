@@ -9,6 +9,8 @@ O depploy foi realizado em uma maquina virtual EC2 na AWS e pode ser acessada pe
 link http://minhaapi-env.eba-83gccam8.us-east-1.elasticbeanstalk.com
 
 já o banco de dados foi criado em outra instância da AWS, utilizando o serviço de RDS.
+
+Para facilitar a leitura, toda a documentação foi montado utilizando o https://swagger.io/ e também o https://swagger.io/tools/swagger-ui/ .
 ## Casos de Uso
 
 Especificamente as consultas resultam em cotação de pares de moedas distintas, relacionadas e disponibilizadas pela https://exchangeratesapi.io/ .
@@ -16,6 +18,8 @@ Especificamente as consultas resultam em cotação de pares de moedas distintas,
 
 Para facilitar os testes e desenvolvimento, API foi protegida com Spring security, utilizando o padrão Basic Auth. Ex: Login e senha padrão.
 O protocolo de transferência utilizado é o HTTP, por motivos adversos, preferi mante-lo, já que o mudar para o HTTPs precisaria de mais tempo.
+
+Abaixo são os EndPoints disponíveis pela api e DOC:
 ```http
 GET http://minhaapi-env.eba-83gccam8.us-east-1.elasticbeanstalk.com/cotacao
 ```
