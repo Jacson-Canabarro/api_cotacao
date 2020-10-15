@@ -19,6 +19,13 @@ O protocolo de transferência utilizado é o HTTP, por motivos adversos, preferi
 ```http
 GET http://minhaapi-env.eba-83gccam8.us-east-1.elasticbeanstalk.com/cotacao
 ```
+```http
+GET http://minhaapi-env.eba-83gccam8.us-east-1.elasticbeanstalk.com/cotacao/moedas
+```
+
+```http
+POST http://minhaapi-env.eba-83gccam8.us-east-1.elasticbeanstalk.com/cotacao
+```
 
 | Parametros | Tipo | Descrição |
 | :--- | :--- | :--- |
